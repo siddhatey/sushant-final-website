@@ -1,0 +1,8 @@
+{
+  "name": "Sushant Chavan Photography",
+  "description": "Films & Photography Studio in Mumbai by Sushant Chavan. Real moments, timeless stories for weddings, family milestones, and bespoke heirloom albums.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

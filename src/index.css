@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Plus Jakarta Sans", sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.45s var(--apple-spring), color 0.35s var(--apple-spring);
+  }
+
+  .dark body {
+    letter-spacing: 0.005em;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+}
+
+.font-editorial {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.apple-glass {
+  background: var(--glass-surface);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--glass-shadow);
+  will-change: transform;
+}
+
+.apple-glass-nav {
+  background: var(--glass-nav);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--glass-shadow);
+}
+
+.apple-glass-interactive {
+  background: var(--glass-surface);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--glass-shadow);
+  will-change: transform;
+  transition: transform 0.55s var(--apple-spring),
+              border-color 0.55s var(--apple-spring),
+              box-shadow 0.55s var(--apple-spring),
+              background-color 0.55s var(--apple-spring);
+}
+
+.apple-glass-interactive:hover {
+  transform: translateY(-3px);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-highlight), var(--glass-shadow-hover);
+}
+
+.apple-btn-spring {
+  transition: transform 0.2s var(--apple-fast),
+              background-color 0.2s var(--apple-fast),
+              box-shadow 0.2s var(--apple-fast),
+              border-color 0.2s var(--apple-fast);
+}
+
+.apple-btn-spring:active {
+  transform: scale(0.98);
+}
+
+@keyframes orb-drift-warm {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4vw, 3vh, 0) scale(1.06);
+  }
+}
+
+@keyframes orb-drift-cool {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-4vw, -3vh, 0) scale(1.08);
+  }
+}
+
+.ambient-orb-warm {
+  background: radial-gradient(circle, var(--orb-orange) 0%, transparent 70%);
+  animation: orb-drift-warm 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+.ambient-orb-cool {
+  background: radial-gradient(circle, var(--orb-teal) 0%, transparent 70%);
+  animation: orb-drift-cool 26s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .apple-glass-interactive,
+  .apple-btn-spring,
+  .ambient-orb-warm,
+  .ambient-orb-cool {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

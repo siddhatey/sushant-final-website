@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sushant Chavan Photography – Films &amp; Photography Mumbai</title>
+    <meta
+      name="description"
+      content="Real moments, timeless stories. Sushant Chavan Photography is a Mumbai films and photography studio crafting cinematic weddings, family milestones, and heirloom albums."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sushant Chavan Photography" />
+    <meta property="og:title" content="Sushant Chavan Photography – Films &amp; Photography Mumbai" />
+    <meta
+      property="og:description"
+      content="Real moments, timeless stories. Mumbai films and photography studio for cinematic weddings, family milestones, and heirloom albums."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sushant Chavan Photography – Films &amp; Photography Mumbai" />
+    <meta
+      name="twitter:description"
+      content="Real moments, timeless stories. Mumbai films and photography studio for cinematic weddings, family milestones, and heirloom albums."
+    />
+    <link rel="icon" type="image/png" href="/assets/aistudio/icon-black_4dc8be7c.png" id="theme-favicon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('scp-theme');
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = saved ? saved === 'dark' : prefersDark;
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+          var favicon = document.getElementById('theme-favicon');
+          if (favicon) {
+            favicon.setAttribute(
+              'href',
+              isDark ? '/assets/aistudio/icon-white_8a762d55.png' : '/assets/aistudio/icon-black_4dc8be7c.png'
+            );
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
