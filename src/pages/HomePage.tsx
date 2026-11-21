@@ -16,24 +16,7 @@ import {
 export const HomePage: React.FC = () => {
   return (
     <>
-      <SeoHead
-        title="Sushant Chavan Photography – Films & Photography Mumbai"
-        description="Real moments, timeless stories. Sushant Chavan Photography is a Mumbai films and photography studio for weddings, family milestones, brands, and heirloom albums."
-        path="/"
-        extraSchemas={[
-          {
-            '@type': 'FAQPage',
-            mainEntity: FAQ_ITEMS.slice(0, 3).map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.answer,
-              },
-            })),
-          },
-        ]}
-      />
+      <SeoHead path="/" />
 
       <main className="mx-auto w-full max-w-[1200px] px-4 pt-8 sm:px-6 sm:pt-12">
         {/* Concise Studio Hero */}

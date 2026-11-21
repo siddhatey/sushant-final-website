@@ -4,10 +4,12 @@ import { SeoHead } from '../components/SeoHead';
 import { FaqAccordion } from '../components/FaqAccordion';
 import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { FAQ_ITEMS, STUDIO_CONTACT } from '../data/studio';
+import { SITE_URL } from '../data/seo';
 
 export const FaqPage: React.FC = () => {
   const faqSchema = {
     '@type': 'FAQPage',
+    '@id': `${SITE_URL}/faq#faqpage`,
     mainEntity: FAQ_ITEMS.map((item) => ({
       '@type': 'Question',
       name: item.question,
@@ -20,12 +22,7 @@ export const FaqPage: React.FC = () => {
 
   return (
     <>
-      <SeoHead
-        title="Frequently Asked Questions – Sushant Chavan Photography"
-        description="Answers on booking timelines, wedding film & photo deliverables, custom heirloom albums, and shoot planning across Mumbai with Sushant Chavan Photography."
-        path="/faq"
-        extraSchemas={[faqSchema]}
-      />
+      <SeoHead path="/faq" extraSchemas={[faqSchema]} />
 
       <main className="mx-auto w-full max-w-[1000px] px-4 pt-10 sm:px-6 sm:pt-14">
         <section className="apple-glass rounded-[28px] p-7 sm:p-10">

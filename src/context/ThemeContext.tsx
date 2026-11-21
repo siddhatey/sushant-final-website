@@ -43,6 +43,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
     const favicon = document.getElementById('theme-favicon') as HTMLLinkElement | null;
     if (favicon) {
+      favicon.type = 'image/png';
       favicon.href = mode === 'dark' ? BRAND_LOGOS.icon.dark : BRAND_LOGOS.icon.light;
     }
   }, []);

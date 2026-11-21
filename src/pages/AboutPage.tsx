@@ -11,11 +11,7 @@ import { STUDIO_IMAGES } from '../data/media';
 export const AboutPage: React.FC = () => {
   return (
     <>
-      <SeoHead
-        title="About Sushant Chavan – Films & Photography Studio Mumbai"
-        description="Meet Sushant Chavan, Mumbai-based photographer and filmmaker dedicated to capturing genuine human emotion, weddings, and family milestones."
-        path="/about"
-      />
+      <SeoHead path="/about" />
 
       <main className="mx-auto w-full max-w-[1200px] px-4 pt-10 sm:px-6 sm:pt-14">
         <section className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12">

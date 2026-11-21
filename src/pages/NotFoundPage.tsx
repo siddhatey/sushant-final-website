@@ -9,11 +9,7 @@ import { STUDIO_CONTACT } from '../data/studio';
 export const NotFoundPage: React.FC = () => {
   return (
     <>
-      <SeoHead
-        title="Page Not Found – Sushant Chavan Photography"
-        description="The requested page could not be found. Return to Sushant Chavan Photography in Mumbai."
-        path="/404"
-      />
+      <SeoHead path="/404" />
 
       <main className="mx-auto flex min-h-[65vh] w-full max-w-[800px] items-center justify-center px-4 py-16 sm:px-6">
         <div className="apple-glass w-full rounded-[28px] p-8 text-center sm:p-12">

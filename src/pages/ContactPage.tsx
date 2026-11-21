@@ -7,11 +7,7 @@ import { STUDIO_CONTACT } from '../data/studio';
 export const ContactPage: React.FC = () => {
   return (
     <>
-      <SeoHead
-        title="Contact – Sushant Chavan Photography | Mumbai Studio"
-        description="Connect directly with Sushant Chavan Photography in Mumbai via WhatsApp, direct phone (+91 8169782702 / +91 8108048407), or Instagram to plan your shoot."
-        path="/contact"
-      />
+      <SeoHead path="/contact" />
 
       <main className="mx-auto w-full max-w-[1200px] px-4 pt-10 sm:px-6 sm:pt-14">
         <section className="apple-glass rounded-[28px] p-7 sm:p-10">

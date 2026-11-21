@@ -5,6 +5,7 @@ import { StudioImage } from '../components/StudioImage';
 import { LightboxModal } from '../components/LightboxModal';
 import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { SHOWCASE_FRAMES, STUDIO_CONTACT } from '../data/studio';
+import { SITE_URL } from '../data/seo';
 
 export const PortfolioPage: React.FC = () => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -31,9 +32,15 @@ export const PortfolioPage: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="Portfolio – Sushant Chavan Photography | Mumbai Weddings & Films"
-        description="Explore recent wedding photography, cinematic films, and family celebrations by Sushant Chavan Photography in Mumbai and via our live Instagram visual archive."
         path="/portfolio"
+        extraSchemas={SHOWCASE_FRAMES.map((frame) => ({
+          '@type': 'ImageObject',
+          '@id': `${SITE_URL}/portfolio#${frame.id}`,
+          name: frame.title,
+          caption: `${frame.category} · ${frame.location} · ${frame.story}`,
+          contentLocation: { '@type': 'Place', name: frame.location },
+          creator: { '@id': `${SITE_URL}/#person` },
+        }))}
       />
 
       <main className="mx-auto w-full max-w-[1200px] px-4 pt-10 sm:px-6 sm:pt-14">

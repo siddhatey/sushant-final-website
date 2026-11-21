@@ -8,14 +8,22 @@ import {
   PROCESS_STEPS,
   STUDIO_CONTACT,
 } from '../data/studio';
+import { AREA_SERVED_LIST, SITE_URL } from '../data/seo';
 
 export const ServicesPage: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="Services – Films & Photography Production | Sushant Chavan Photography"
-        description="Weddings & Love, Family Milestones, Brands & Events, Capture Styles, and end-to-end photo production across Mumbai and India."
         path="/services"
+        extraSchemas={CAPABILITIES.map((service) => ({
+          '@type': 'Service',
+          '@id': `${SITE_URL}/services#${service.id}`,
+          name: service.title,
+          serviceType: service.subtitle,
+          description: service.description,
+          provider: { '@id': `${SITE_URL}/#business` },
+          areaServed: AREA_SERVED_LIST,
+        }))}
       />
 
       <main className="mx-auto w-full max-w-[1200px] px-4 pt-10 sm:px-6 sm:pt-14">
