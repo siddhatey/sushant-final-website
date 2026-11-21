@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, MessageCircle } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
 import { BrandLogo } from '../components/BrandLogo';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { STUDIO_CONTACT } from '../data/studio';
 
 export const NotFoundPage: React.FC = () => {
@@ -51,7 +52,7 @@ export const NotFoundPage: React.FC = () => {
               rel="noopener noreferrer"
               className="apple-btn-spring inline-flex min-h-[44px] items-center gap-2 rounded-full border border-[var(--glass-border)] bg-[var(--glass-surface)] px-5 py-2.5 text-xs font-semibold text-[var(--text-primary)]"
             >
-              <MessageCircle className="h-4 w-4 text-[#0EA5B8]" aria-hidden="true" />
+              <WhatsAppIcon className="h-4 w-4" />
               <span>WhatsApp</span>
             </a>
           </div>

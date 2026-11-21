@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Instagram, ExternalLink, MessageCircle, Maximize2 } from 'lucide-react';
+import { Instagram, ExternalLink, Maximize2 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
 import { StudioImage } from '../components/StudioImage';
 import { LightboxModal } from '../components/LightboxModal';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { SHOWCASE_FRAMES, STUDIO_CONTACT } from '../data/studio';
 
 export const PortfolioPage: React.FC = () => {
@@ -71,7 +72,7 @@ export const PortfolioPage: React.FC = () => {
                 rel="noopener noreferrer"
                 className="apple-btn-spring inline-flex min-h-[44px] items-center gap-2 rounded-full border border-[var(--glass-border)] bg-[var(--glass-surface)] px-5 py-2.5 text-xs font-semibold text-[var(--text-primary)] hover:border-[var(--glass-border-hover)] whitespace-nowrap"
               >
-                <MessageCircle className="h-4 w-4 text-[#0EA5B8]" aria-hidden="true" />
+                <WhatsAppIcon className="h-4 w-4" />
                 <span>Request Film Reels</span>
               </a>
             </div>

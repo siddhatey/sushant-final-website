@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageCircle, Phone, Instagram } from 'lucide-react';
+import { Phone, Instagram } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { STUDIO_CONTACT } from '../data/studio';
 
 export const FloatingActionDock: React.FC = () => {
@@ -15,7 +16,7 @@ export const FloatingActionDock: React.FC = () => {
           rel="noopener noreferrer"
           className="apple-btn-spring inline-flex h-8 items-center gap-1.5 rounded-full bg-[#FF8A00] px-3.5 text-xs font-semibold text-white hover:bg-[#E67C00] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8A00] whitespace-nowrap shrink-0"
         >
-          <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+          <WhatsAppIcon className="h-4 w-4" />
           <span>WhatsApp</span>
         </a>
 

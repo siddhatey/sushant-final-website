@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MessageCircle, ArrowRight, Phone } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
 import { BrandLogo } from '../components/BrandLogo';
 import { StudioImage } from '../components/StudioImage';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { STUDIO_CONTACT } from '../data/studio';
 import { STUDIO_IMAGES } from '../data/media';
 
@@ -70,7 +71,7 @@ export const AboutPage: React.FC = () => {
                 rel="noopener noreferrer"
                 className="apple-btn-spring inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#FF8A00] px-6 py-2.5 text-xs font-semibold text-white hover:bg-[#E67C00] whitespace-nowrap"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                <WhatsAppIcon className="h-4 w-4" />
                 <span>Connect with Sushant</span>
               </a>
 

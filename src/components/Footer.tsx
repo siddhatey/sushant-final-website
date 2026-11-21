@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, MessageCircle, Instagram } from 'lucide-react';
+import { Phone, Instagram } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
 import { ThemeToggle } from './ThemeToggle';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { STUDIO_CONTACT } from '../data/studio';
 
 export const Footer: React.FC = () => {
@@ -92,7 +93,7 @@ export const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="apple-btn-spring inline-flex min-h-[42px] items-center justify-center gap-2 rounded-full bg-[#FF8A00] px-5 py-2.5 text-xs font-semibold text-white hover:bg-[#E67C00] whitespace-nowrap"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                <WhatsAppIcon className="h-4 w-4" />
                 <span>WhatsApp Studio</span>
               </a>
 

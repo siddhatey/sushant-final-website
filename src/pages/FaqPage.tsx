@@ -1,7 +1,8 @@
 import React from 'react';
-import { MessageCircle, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
 import { FaqAccordion } from '../components/FaqAccordion';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { FAQ_ITEMS, STUDIO_CONTACT } from '../data/studio';
 
 export const FaqPage: React.FC = () => {
@@ -61,7 +62,7 @@ export const FaqPage: React.FC = () => {
                 rel="noopener noreferrer"
                 className="apple-btn-spring inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#FF8A00] px-5 py-2.5 text-xs font-semibold text-white hover:bg-[#E67C00]"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                <WhatsAppIcon className="h-4 w-4" />
                 <span>WhatsApp Studio</span>
               </a>
               <a

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ShowcaseFrame, STUDIO_CONTACT } from '../data/studio';
 import { StudioImage } from './StudioImage';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface LightboxModalProps {
   frames: ShowcaseFrame[];
@@ -105,7 +106,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
             rel="noopener noreferrer"
             className="apple-btn-spring inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#FF8A00] px-5 py-2.5 text-xs font-semibold text-white hover:bg-[#E67C00] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8A00] whitespace-nowrap"
           >
-            <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+            <WhatsAppIcon className="h-4 w-4" />
             <span>Plan a Shoot</span>
           </a>
         </div>

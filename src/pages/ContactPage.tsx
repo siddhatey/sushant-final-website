@@ -1,6 +1,7 @@
 import React from 'react';
-import { MessageCircle, Phone, Instagram, MapPin, ArrowUpRight } from 'lucide-react';
+import { Phone, Instagram, MapPin, ArrowUpRight } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { STUDIO_CONTACT } from '../data/studio';
 
 export const ContactPage: React.FC = () => {
@@ -39,8 +40,8 @@ export const ContactPage: React.FC = () => {
           >
             <div>
               <div className="flex items-center justify-between">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FF8A00]/15 text-[#FF8A00]">
-                  <MessageCircle className="h-6 w-6" aria-hidden="true" />
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#25D366]/15">
+                  <WhatsAppIcon className="h-7 w-7" />
                 </span>
                 <ArrowUpRight
                   className="h-5 w-5 text-[var(--text-secondary)] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#FF8A00]"
@@ -162,11 +163,11 @@ export const ContactPage: React.FC = () => {
               </span>
               <div>
                 <h2 className="text-lg font-semibold text-[var(--text-primary)]">
-                  Mumbai Studio &amp; Service Region
+                  Kandivali West Studio &amp; Service Region
                 </h2>
                 <p className="mt-1 text-sm text-[var(--text-secondary)]">
-                  Based in Mumbai, India — serving South Mumbai, Bandra, Juhu, Powai, Thane, Navi
-                  Mumbai, Alibaug, Pune, and destination celebrations across India.
+                  Studio in Kandivali West, Mumbai — serving South Mumbai, Bandra, Juhu, Powai,
+                  Thane, Navi Mumbai, Maharashtra, and destination celebrations across India.
                 </p>
               </div>
             </div>

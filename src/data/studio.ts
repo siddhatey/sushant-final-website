@@ -4,6 +4,7 @@ export const STUDIO_CONTACT = {
   brandName: 'Sushant Chavan Photography',
   owner: 'Sushant Chavan',
   city: 'Mumbai, India',
+  studioArea: 'Kandivali West, Mumbai',
   tagline: 'Real Moments. Timeless Stories.',
   ctaPhilosophy: 'Real moments, timeless stories—connect with us to plan your shoot.',
   whatsappUrl:
@@ -26,79 +27,134 @@ export interface CapabilityItem {
   description: string;
   highlights: string[];
   accent: 'orange' | 'teal';
-  image: string;
-  imageAlt: string;
   aspectClass: string;
 }
 
 export const CAPABILITIES: CapabilityItem[] = [
   {
-    id: 'wedding-films-photography',
+    id: 'weddings-love',
     number: '01',
-    title: 'Cinematic Wedding Films & Photography',
-    subtitle: 'Mumbai · Destination Celebrations · Multi-Day Coverage',
+    title: 'Weddings & Love',
+    subtitle: 'Weddings · Pre-Weddings · Engagements',
     description:
-      'Documentary honesty meets cinema-grade framing. From quiet morning preparations to late-night sangeet energy, we capture unscripted emotion and sacred traditions without intruding on the moment.',
+      'Full-frame wedding and pre-wedding photography across Maharashtra and destination venues in India, delivered fast.',
     highlights: [
-      'Candid storytelling & timeless editorial portraits',
-      'Full-length wedding films & 4K highlight reels',
-      'Synchronized multi-camera ritual coverage',
+      'Wedding Photography',
+      'Pre-Wedding Shoots',
+      'Engagement Coverage',
     ],
     accent: 'orange',
-    image: STUDIO_IMAGES.weddingCinema,
-    imageAlt: 'Bride and groom sharing a candid golden-hour moment on a Mumbai terrace overlooking the Arabian Sea',
-    aspectClass: 'md:col-span-7',
+    aspectClass: 'md:col-span-6',
   },
   {
     id: 'family-milestones',
     number: '02',
-    title: 'Family Functions & Milestone Celebrations',
-    subtitle: 'Intimate Gatherings · Anniversaries · Generational Portraits',
+    title: 'Family Milestones',
+    subtitle: 'Maternity · Baby Showers · Birthdays',
     description:
-      'Life’s defining chapters deserve presence and warmth. We document milestone birthdays, naming ceremonies, anniversaries, and multi-generational family reunions with natural grace.',
+      'Heartfelt photography for life’s intimate celebrations, crafted carefully and delivered quickly.',
     highlights: [
-      'Relaxed documentary pacing for elders and children',
-      'Warm ambient courtyard & home storytelling',
-      'Curated digital galleries shared effortlessly with family',
+      'Maternity & Baby Showers',
+      'Naming Ceremonies',
+      'Milestone Birthdays & Anniversaries',
     ],
     accent: 'teal',
-    image: STUDIO_IMAGES.familyMilestone,
-    imageAlt: 'Multi-generational Indian family sharing laughter around a warmly lit courtyard celebration dinner',
-    aspectClass: 'md:col-span-5',
+    aspectClass: 'md:col-span-6',
   },
   {
-    id: 'multi-angle-aerial',
+    id: 'brands-events',
     number: '03',
-    title: 'Multi-Angle & Aerial Cinematography',
-    subtitle: 'Dynamic Production · Gimbal Motion · Licensed Drone Sweeps',
+    title: 'Brands & Events',
+    subtitle: 'Corporate · Commercial · Hospitality',
     description:
-      'Grand celebrations across coastal venues, heritage properties, and banquet lawns demand spatial scale. Our production crew blends stabilized motion with aerial perspectives for theatrical depth.',
+      'Sharp commercial photography built for websites, press, and social media.',
     highlights: [
-      'Cinema prime lenses & stabilized gimbal movement',
-      'Aerial establishing shots for venue architecture',
-      'Dedicated live-sound capture for vows & speeches',
+      'Corporate Events & Summits',
+      'Commercial & Product Shoots',
+      'Food & Hospitality Photography',
     ],
     accent: 'teal',
-    image: STUDIO_IMAGES.ceremonialDetail,
-    imageAlt: 'Close-up editorial frame of bride hands with mehendi holding marigold and jasmine garlands',
-    aspectClass: 'md:col-span-5',
+    aspectClass: 'md:col-span-6',
   },
   {
-    id: 'post-production-albums',
+    id: 'capture-styles',
     number: '04',
-    title: 'Post-Production, Color Grading & Heirloom Albums',
-    subtitle: 'In-House Finishing · Archival Prints · Bespoke Linen Volumes',
+    title: 'Capture Styles',
+    subtitle: 'Candid · Traditional · Editorial',
     description:
-      'Every frame is graded in-house for natural skin tones, true-to-life film warmth, and enduring clarity. Complete your story with handcrafted lay-flat heirloom albums built to outlast trends.',
+      'Unscripted emotion, classic family portraits, and clean editorial framing—retouched by our in-house editing desk.',
     highlights: [
-      'Bespoke cinema color grading & sound design',
-      'Custom Italian-linen & archival cotton-rag albums',
-      'Private high-resolution cloud archive delivery',
+      'Candid Photography',
+      'Traditional Photography',
+      'Fine-Art & Editorial Portraits',
     ],
     accent: 'orange',
-    image: STUDIO_IMAGES.heirloomAlbum,
-    imageAlt: 'Handcrafted linen-bound heirloom wedding album resting open on travertine stone in warm sunlight',
-    aspectClass: 'md:col-span-7',
+    aspectClass: 'md:col-span-6',
+  },
+];
+
+export interface TechnicalScopeItem {
+  number: string;
+  title: string;
+  description: string;
+  accent: 'orange' | 'teal';
+}
+
+export const TECHNICAL_SCOPE: TechnicalScopeItem[] = [
+  {
+    number: '01',
+    title: 'Trained In-House Photographers',
+    description:
+      'Full-frame bodies, fast prime lenses, and studio lighting led with consistent creative direction by Sushant Chavan.',
+    accent: 'orange',
+  },
+  {
+    number: '02',
+    title: 'Multi-Angle & Aerial Coverage',
+    description:
+      'Synchronized multi-photographer setups and licensed aerial drone photography for grand weddings and large venues.',
+    accent: 'teal',
+  },
+  {
+    number: '03',
+    title: 'Fastest Retouching Pipeline',
+    description:
+      'Private raw cloud galleries within hours, followed by fast-track color-graded and retouched high-res photos.',
+    accent: 'teal',
+  },
+  {
+    number: '04',
+    title: 'Heirloom Finishing',
+    description:
+      'Lay-flat archival linen albums, bespoke wall frames, and one-click full-res digital galleries delivered to your door.',
+    accent: 'orange',
+  },
+];
+
+export const PROCESS_STEPS = [
+  {
+    step: '01',
+    title: 'Direct Consultation',
+    detail:
+      'Connect with Sushant via WhatsApp, call, or at our Kandivali West studio to lock dates and scope.',
+  },
+  {
+    step: '02',
+    title: 'In-House Shoot',
+    detail:
+      'Our synchronized team of photographers and drone operators covers every moment seamlessly.',
+  },
+  {
+    step: '03',
+    title: 'Rapid Retouching',
+    detail:
+      'Fast culling, skin retouching, and true-to-life color grading by our in-house photo desk.',
+  },
+  {
+    step: '04',
+    title: 'Heirloom Delivery',
+    detail:
+      'One-click full-res digital galleries, lay-flat archival linen albums, and bespoke wall frames delivered to your door.',
   },
 ];
 
@@ -179,13 +235,13 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: 'Locations',
     question: 'Are you based in Mumbai, and do you travel for destination shoots?',
     answer:
-      'Our studio is based in Mumbai, serving South Mumbai, Bandra, Juhu, Powai, Thane, and Navi Mumbai regularly. We also travel across Maharashtra (Alibaug, Lonavala, Pune, Nashik) and pan-India for destination weddings and family celebrations.',
+      'Our studio is based in Kandivali West, Mumbai, serving South Mumbai, Bandra, Juhu, Powai, Thane, and Navi Mumbai regularly. We also travel across Maharashtra (Alibaug, Lonavala, Pune, Nashik) and pan-India for destination weddings and family celebrations.',
   },
   {
     category: 'Deliverables',
     question: 'What is the typical delivery timeline for photos and wedding films?',
     answer:
-      'A curated preview gallery of 40–60 signature frames is shared within 5 to 7 days of your event. Complete color-graded photography galleries are delivered within 4 to 6 weeks, and bespoke cinematic films are finalized within 6 to 10 weeks.',
+      'Private raw cloud galleries are shared within hours, followed by fast-track color-graded and retouched high-res photos within 2 to 4 weeks, and bespoke cinematic films within 6 to 8 weeks.',
   },
   {
     category: 'Albums',
@@ -197,29 +253,6 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: 'Planning',
     question: 'How do we plan our shoot timeline and lighting schedule with your team?',
     answer:
-      'Once your date is reserved, Sushant personally conducts a pre-event planning call with you and your family or planner. We map out golden-hour portrait windows, ritual timings, and multi-angle camera positions so your celebration stays relaxed and natural.',
-  },
-];
-
-export const PROCESS_STEPS = [
-  {
-    step: '01',
-    title: 'Discovery & Story Alignment',
-    detail: 'Connect directly via WhatsApp or phone to share your dates, venues, and family traditions.',
-  },
-  {
-    step: '02',
-    title: 'Timeline & Visual Planning',
-    detail: 'We craft a relaxed lighting and shot rhythm around your ceremonies without staging stiff poses.',
-  },
-  {
-    step: '03',
-    title: 'Production Day Execution',
-    detail: 'A cohesive Mumbai crew capturing stills, multi-angle motion, ambient audio, and aerial frames.',
-  },
-  {
-    step: '04',
-    title: 'Color Grading & Heirloom Delivery',
-    detail: 'Precision in-house editing, cinema sound design, cloud gallery sharing, and hand-bound albums.',
+      'Once your date is reserved, Sushant personally conducts a pre-event planning call with you at our Kandivali West studio or over phone. We map out golden-hour portrait windows, ritual timings, and multi-angle camera positions so your celebration stays relaxed and natural.',
   },
 ];

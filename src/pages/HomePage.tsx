@@ -1,27 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MessageCircle, Maximize2, Phone } from 'lucide-react';
+import { ArrowRight, Phone, Check } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
 import { BrandLogo } from '../components/BrandLogo';
-import { StudioImage } from '../components/StudioImage';
-import { LightboxModal } from '../components/LightboxModal';
 import { FaqAccordion } from '../components/FaqAccordion';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import {
   CAPABILITIES,
+  TECHNICAL_SCOPE,
+  PROCESS_STEPS,
   FAQ_ITEMS,
-  SHOWCASE_FRAMES,
   STUDIO_CONTACT,
 } from '../data/studio';
-import { STUDIO_IMAGES } from '../data/media';
 
 export const HomePage: React.FC = () => {
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-
   return (
     <>
       <SeoHead
         title="Sushant Chavan Photography – Films & Photography Mumbai"
-        description="Real moments, timeless stories. Sushant Chavan Photography is a Mumbai films and photography studio crafting cinematic weddings, family milestones, and heirloom albums."
+        description="Real moments, timeless stories. Sushant Chavan Photography is a Mumbai films and photography studio for weddings, family milestones, brands, and heirloom albums."
         path="/"
         extraSchemas={[
           {
@@ -38,20 +35,23 @@ export const HomePage: React.FC = () => {
         ]}
       />
 
-      <main className="mx-auto w-full max-w-[1200px] px-4 pt-8 sm:px-6 sm:pt-14">
-        {/* Studio Hero Section */}
-        <section aria-labelledby="hero-heading" className="flex flex-col items-center text-center">
-          <div className="mb-6">
-            <BrandLogo variant="stacked" className="h-28 w-auto sm:h-36" />
+      <main className="mx-auto w-full max-w-[1200px] px-4 pt-8 sm:px-6 sm:pt-12">
+        {/* Concise Studio Hero */}
+        <section
+          aria-labelledby="hero-heading"
+          className="apple-glass flex flex-col items-center rounded-[28px] px-6 py-12 text-center sm:px-12 sm:py-16"
+        >
+          <div className="mb-5">
+            <BrandLogo variant="stacked" className="h-24 w-auto sm:h-32" />
           </div>
 
           <p className="text-xs font-medium tracking-wide text-[var(--text-secondary)] sm:text-sm">
-            Films &amp; Photography <span aria-hidden="true">·</span> Mumbai, India
+            Films &amp; Photography <span aria-hidden="true">·</span> Kandivali West, Mumbai
           </p>
 
           <h1
             id="hero-heading"
-            className="mt-4 max-w-4xl text-[clamp(2.35rem,5.2vw,4.35rem)] font-bold leading-[1.06] tracking-[-0.03em] text-[var(--text-primary)]"
+            className="mt-3 max-w-4xl text-[clamp(2.2rem,5vw,4.1rem)] font-bold leading-[1.06] tracking-[-0.03em] text-[var(--text-primary)]"
           >
             Real Moments.{' '}
             <span className="font-editorial font-medium italic text-[#FF8A00]">
@@ -59,15 +59,15 @@ export const HomePage: React.FC = () => {
             </span>
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
-            {STUDIO_CONTACT.ctaPhilosophy} We craft cinematic wedding films, authentic family
-            portraits, and archival heirloom albums across Mumbai.
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
+            {STUDIO_CONTACT.ctaPhilosophy} Full-frame weddings, family milestones, commercial
+            stories, and fast in-house retouching across Mumbai and India.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
             <Link
               to="/portfolio"
-              className="apple-btn-spring inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full bg-[#FF8A00] px-7 py-3 text-sm font-semibold text-white hover:bg-[#E67C00] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8A00] whitespace-nowrap"
+              className="apple-btn-spring inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-[#FF8A00] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#E67C00] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8A00] whitespace-nowrap"
             >
               <span>Explore Portfolio</span>
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -77,76 +77,45 @@ export const HomePage: React.FC = () => {
               href={STUDIO_CONTACT.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="apple-glass-interactive apple-btn-spring inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5B8] whitespace-nowrap"
+              className="apple-glass-interactive apple-btn-spring inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5B8] whitespace-nowrap"
             >
-              <MessageCircle className="h-4 w-4 text-[#0EA5B8]" aria-hidden="true" />
+              <WhatsAppIcon className="h-4 w-4" />
               <span>Connect on WhatsApp</span>
             </a>
           </div>
-
-          {/* Hero Cinema Frame */}
-          <div className="apple-glass mt-10 w-full overflow-hidden rounded-[28px] p-2.5 sm:mt-14 sm:p-3.5">
-            <button
-              type="button"
-              onClick={() => setLightboxIndex(0)}
-              aria-label="Open Arabian Sea Golden Hour photograph in fullscreen"
-              className="group relative block w-full overflow-hidden rounded-[20px] text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8A00]"
-            >
-              <StudioImage
-                src={STUDIO_IMAGES.weddingCinema}
-                alt="Indian bride and groom sharing a joyful golden-hour moment overlooking Mumbai"
-                title="Arabian Sea Golden Hour"
-                loading="eager"
-                className="aspect-[16/9] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]"
-              />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-black/80 via-black/35 to-transparent p-5 sm:p-7">
-                <div>
-                  <p className="text-xs font-medium text-white/80">
-                    Wedding Cinema &amp; Stills · South Mumbai · 35mm Prime
-                  </p>
-                  <p className="mt-1 text-base font-semibold text-white sm:text-xl">
-                    Arabian Sea Golden Hour
-                  </p>
-                </div>
-                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/25 bg-black/40 text-white backdrop-blur-md">
-                  <Maximize2 className="h-4 w-4" aria-hidden="true" />
-                </span>
-              </div>
-            </button>
-          </div>
         </section>
 
-        {/* Frosted Bento Capabilities Grid */}
-        <section aria-labelledby="capabilities-heading" className="mt-24">
-          <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        {/* What We Shoot */}
+        <section aria-labelledby="what-we-shoot-heading" className="mt-16">
+          <div className="mb-7 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-[#0EA5B8]">
-                Studio Capabilities
+                Studio Services
               </p>
               <h2
-                id="capabilities-heading"
-                className="mt-2 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl"
+                id="what-we-shoot-heading"
+                className="mt-1.5 text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl"
               >
-                End-to-End Films &amp; Photography
+                What We Shoot
               </h2>
             </div>
             <Link
               to="/services"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#FF8A00] hover:underline whitespace-nowrap"
             >
-              <span>View Full Production Scope</span>
+              <span>Full Production Details</span>
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-12">
             {CAPABILITIES.map((cap) => (
               <article
                 key={cap.id}
-                className={`apple-glass-interactive flex flex-col justify-between overflow-hidden rounded-[28px] p-6 sm:p-7 ${cap.aspectClass}`}
+                className={`apple-glass-interactive flex flex-col justify-between rounded-[28px] p-6 sm:p-7 ${cap.aspectClass}`}
               >
                 <div>
-                  <div className="flex items-baseline justify-between gap-4">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <span
                       className={`text-sm font-semibold tabular-nums ${
                         cap.accent === 'orange' ? 'text-[#FF8A00]' : 'text-[#0EA5B8]'
@@ -159,125 +128,117 @@ export const HomePage: React.FC = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-xl font-semibold text-[var(--text-primary)] sm:text-2xl">
+                  <h3 className="mt-2.5 text-xl font-semibold text-[var(--text-primary)]">
                     {cap.title}
                   </h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-[var(--text-secondary)]">
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
                     {cap.description}
                   </p>
-
-                  <ul className="mt-4 space-y-1.5 text-sm text-[var(--text-primary)]">
-                    {cap.highlights.map((point) => (
-                      <li key={point} className="flex items-start gap-2">
-                        <span
-                          aria-hidden="true"
-                          className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${
-                            cap.accent === 'orange' ? 'bg-[#FF8A00]' : 'bg-[#0EA5B8]'
-                          }`}
-                        />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
 
-                <div className="mt-6 overflow-hidden rounded-[20px]">
-                  <StudioImage
-                    src={cap.image}
-                    alt={cap.imageAlt}
-                    title={cap.title}
-                    className="aspect-[16/10] w-full object-cover"
-                  />
-                </div>
+                <ul className="mt-5 grid grid-cols-1 gap-2 border-t border-[var(--glass-border)] pt-4 text-sm text-[var(--text-primary)]">
+                  {cap.highlights.map((point) => (
+                    <li key={point} className="flex items-center gap-2.5">
+                      <Check
+                        className={`h-4 w-4 shrink-0 ${
+                          cap.accent === 'orange' ? 'text-[#FF8A00]' : 'text-[#0EA5B8]'
+                        }`}
+                        aria-hidden="true"
+                      />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
         </section>
 
-        {/* Curated Visual Showcase */}
-        <section aria-labelledby="showcase-heading" className="mt-24">
-          <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#FF8A00]">
-                Visual Archive Teaser
-              </p>
-              <h2
-                id="showcase-heading"
-                className="mt-2 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl"
-              >
-                Selected Frames Across Mumbai
-              </h2>
-            </div>
-            <Link
-              to="/portfolio"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0EA5B8] hover:underline whitespace-nowrap"
+        {/* Technical Scope: End-to-End Photo Production */}
+        <section aria-labelledby="technical-scope-heading" className="mt-16">
+          <div className="mb-7">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#FF8A00]">
+              Technical Scope
+            </p>
+            <h2
+              id="technical-scope-heading"
+              className="mt-1.5 text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl"
             >
-              <span>Open Live Instagram Portfolio</span>
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+              End-to-End Photo Production
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {SHOWCASE_FRAMES.map((frame, index) => (
-              <button
-                key={frame.id}
-                type="button"
-                onClick={() => setLightboxIndex(index)}
-                className="apple-glass-interactive group flex flex-col overflow-hidden rounded-[28px] p-3 text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8A00]"
-              >
-                <div className="relative w-full overflow-hidden rounded-[20px]">
-                  <StudioImage
-                    src={frame.image}
-                    alt={frame.alt}
-                    title={frame.title}
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/45 text-white opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100"
-                  >
-                    <Maximize2 className="h-4 w-4" />
-                  </span>
-                </div>
-                <div className="px-3 pb-2 pt-4">
-                  <p className="text-xs text-[var(--text-secondary)]">
-                    {frame.category} · {frame.location} · {frame.specs}
-                  </p>
-                  <h3 className="mt-1 text-lg font-semibold text-[var(--text-primary)]">
-                    {frame.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-[var(--text-secondary)] line-clamp-2">
-                    {frame.story}
-                  </p>
-                </div>
-              </button>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {TECHNICAL_SCOPE.map((item) => (
+              <article key={item.number} className="apple-glass-interactive rounded-[24px] p-6">
+                <span
+                  className={`text-sm font-semibold tabular-nums ${
+                    item.accent === 'orange' ? 'text-[#FF8A00]' : 'text-[#0EA5B8]'
+                  }`}
+                >
+                  {item.number}
+                </span>
+                <h3 className="mt-2 text-base font-semibold text-[var(--text-primary)]">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Workflow: Four Steps, One Studio */}
+        <section aria-labelledby="workflow-home-heading" className="mt-16">
+          <div className="mb-7">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#0EA5B8]">
+              Workflow
+            </p>
+            <h2
+              id="workflow-home-heading"
+              className="mt-1.5 text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl"
+            >
+              Four Steps, One Studio
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {PROCESS_STEPS.map((item) => (
+              <div key={item.step} className="apple-glass-interactive rounded-[24px] p-6">
+                <span className="text-sm font-semibold text-[#0EA5B8] tabular-nums">
+                  {item.step}
+                </span>
+                <h3 className="mt-2 text-base font-semibold text-[var(--text-primary)]">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+                  {item.detail}
+                </p>
+              </div>
             ))}
           </div>
         </section>
 
         {/* FAQ Snapshot & Direct Callout */}
-        <section aria-labelledby="faq-snapshot-heading" className="mt-24 grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <section aria-labelledby="faq-snapshot-heading" className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="text-xs font-semibold uppercase tracking-wider text-[#0EA5B8]">
               Planning Your Shoot
             </p>
             <h2
               id="faq-snapshot-heading"
-              className="mt-2 text-3xl font-bold tracking-tight text-[var(--text-primary)]"
+              className="mt-1.5 text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl"
             >
               Common Questions
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
-              Everything you need to know about availability, multi-day wedding cinema, family
-              milestones, and custom heirloom albums in Mumbai.
+            <p className="mt-2.5 text-sm leading-relaxed text-[var(--text-secondary)]">
+              Availability, rapid retouching timelines, destination coverage, and heirloom albums.
             </p>
 
-            <div className="apple-glass mt-6 rounded-[24px] p-6">
+            <div className="apple-glass mt-5 rounded-[24px] p-6">
               <p className="text-sm font-semibold text-[var(--text-primary)]">
-                Prefer a quick conversation?
-              </p>
-              <p className="mt-1 text-xs text-[var(--text-secondary)]">
-                Speak directly with Sushant or message the studio team.
+                Connect with our Kandivali West Studio
               </p>
               <div className="mt-4 flex flex-wrap gap-2.5">
                 <a
@@ -286,7 +247,7 @@ export const HomePage: React.FC = () => {
                   rel="noopener noreferrer"
                   className="apple-btn-spring inline-flex min-h-[42px] items-center gap-2 rounded-full bg-[#FF8A00] px-5 py-2 text-xs font-semibold text-white hover:bg-[#E67C00]"
                 >
-                  <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+                  <WhatsAppIcon className="h-4 w-4" />
                   <span>WhatsApp</span>
                 </a>
                 <a
@@ -299,7 +260,7 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-5">
+            <div className="mt-4">
               <Link
                 to="/faq"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#FF8A00] hover:underline"
@@ -315,13 +276,6 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
       </main>
-
-      <LightboxModal
-        frames={SHOWCASE_FRAMES}
-        activeIndex={lightboxIndex}
-        onClose={() => setLightboxIndex(null)}
-        onSelect={(idx) => setLightboxIndex(idx)}
-      />
     </>
   );
 };
